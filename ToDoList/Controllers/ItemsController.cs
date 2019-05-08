@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.Models;
 using System.Collections.Generic;
+using System;
 
 namespace ToDoList.Controllers
 {
@@ -31,6 +32,7 @@ namespace ToDoList.Controllers
       Item.ClearAll();
       return View();
     }
+
     [HttpGet("/categories/{categoryId}/items/{itemId}/edit")]
     public ActionResult Edit(int categoryId, int itemId)
     {
@@ -41,6 +43,7 @@ namespace ToDoList.Controllers
       model.Add("item", item);
       return View(model);
     }
+
     [HttpPost("/categories/{categoryId}/items/{itemId}")]
     public ActionResult Update(int categoryId, int itemId, string newDescription)
     {
@@ -53,5 +56,15 @@ namespace ToDoList.Controllers
       return View("Show", model);
     }
 
+    [HttpGet("/categories/{id}")]
+    public ActionResult Show(int id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Category selectedCategory = Category.Find(id);
+      List<Item> categoryItems = selectedCategory.GetItems();
+      model.Add("category", selectedCategory);
+      model.Add("items", categoryItems);
+      return View(model);
+    }
   }
 }

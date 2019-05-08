@@ -13514,11 +13514,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Guest/Desktop/toDoListPractice/ToDoList.Tests/ToDoList.Tests.csproj",
+      "projectUniqueName": "/Users/Guest/Desktop/ToDoList-Database/ToDoList.Tests/ToDoList.Tests.csproj",
       "projectName": "ToDoList.Tests",
-      "projectPath": "/Users/Guest/Desktop/toDoListPractice/ToDoList.Tests/ToDoList.Tests.csproj",
+      "projectPath": "/Users/Guest/Desktop/ToDoList-Database/ToDoList.Tests/ToDoList.Tests.csproj",
       "packagesPath": "/Users/Guest/.nuget/packages/",
-      "outputPath": "/Users/Guest/Desktop/toDoListPractice/ToDoList.Tests/obj/",
+      "outputPath": "/Users/Guest/Desktop/ToDoList-Database/ToDoList.Tests/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -13535,8 +13535,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "/Users/Guest/Desktop/toDoListPractice/ToDoList/ToDoList.csproj": {
-              "projectPath": "/Users/Guest/Desktop/toDoListPractice/ToDoList/ToDoList.csproj"
+            "/Users/Guest/Desktop/ToDoList-Database/ToDoList/ToDoList.csproj": {
+              "projectPath": "/Users/Guest/Desktop/ToDoList-Database/ToDoList/ToDoList.csproj"
             }
           }
         }
@@ -13587,13 +13587,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/Guest/Desktop/toDoListPractice/ToDoList.Tests/obj/ToDoList.Tests.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
