@@ -11,7 +11,8 @@
           "MSTest.TestAdapter": "1.1.11",
           "MSTest.TestFramework": "1.1.11",
           "Microsoft.NET.Test.Sdk": "15.0.0",
-          "ToDoList": "1.0.0"
+          "ToDoList": "1.0.0",
+          "MySqlConnector": "0.53.0"
         },
         "runtime": {
           "ToDoList.Tests.dll": {}

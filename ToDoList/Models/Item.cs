@@ -176,7 +176,7 @@ namespace ToDoList.Models
       }
     }
 
-    public void DeleteItem(int id)
+    public void DeleteItem()
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
