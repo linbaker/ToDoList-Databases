@@ -9,7 +9,7 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.1.11" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="mysqlconnector" Version="0.53.0" />
+    <PackageReference Include="mysqlconnector" Version="0.54.0" />
   </ItemGroup>
 
   <ItemGroup>

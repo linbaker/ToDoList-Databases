@@ -2997,7 +2997,7 @@
           "lib/netcoreapp1.0/Microsoft.VisualStudio.TestPlatform.TestFramework.dll": {}
         }
       },
-      "MySqlConnector/0.53.0": {
+      "MySqlConnector/0.54.0": {
         "type": "package",
         "compile": {
           "lib/netcoreapp2.1/MySqlConnector.dll": {}
@@ -4956,7 +4956,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "MySqlConnector": "0.53.0"
+          "MySqlConnector": "0.54.0"
         },
         "compile": {
           "bin/placeholder/ToDoList.dll": {}
@@ -8101,10 +8101,10 @@
         "mstest.testframework.nuspec"
       ]
     },
-    "MySqlConnector/0.53.0": {
-      "sha512": "4jP7FFwcjNLoGD67jVQVUjBIPEXNZ8IW5fQEFhjoPHi+7xuJyUDXOBvBix+HrfeJy6T+Wc5NVQJwgUUuBeljNA==",
+    "MySqlConnector/0.54.0": {
+      "sha512": "vi/a+3pBB9IGZRVFxGy5GcEeb688mPPGaeQQoWVaNukLeL6G6NU749gbZK2S+UeiEvVgmYRPeB6J9xfy2yaGkg==",
       "type": "package",
-      "path": "mysqlconnector/0.53.0",
+      "path": "mysqlconnector/0.54.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8114,7 +8114,7 @@
         "lib/netcoreapp2.1/MySqlConnector.dll",
         "lib/netstandard1.3/MySqlConnector.dll",
         "lib/netstandard2.0/MySqlConnector.dll",
-        "mysqlconnector.0.53.0.nupkg.sha512",
+        "mysqlconnector.0.54.0.nupkg.sha512",
         "mysqlconnector.nuspec"
       ]
     },
@@ -13505,7 +13505,7 @@
       "Microsoft.NET.Test.Sdk >= 15.0.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "ToDoList >= 1.0.0",
-      "mysqlconnector >= 0.53.0"
+      "mysqlconnector >= 0.54.0"
     ]
   },
   "packageFolders": {
@@ -13515,11 +13515,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Guest/Desktop/ToDoList-Database/ToDoList.Tests/ToDoList.Tests.csproj",
+      "projectUniqueName": "/Users/Guest/Desktop/ToDoList-Databases/ToDoList.Tests/ToDoList.Tests.csproj",
       "projectName": "ToDoList.Tests",
-      "projectPath": "/Users/Guest/Desktop/ToDoList-Database/ToDoList.Tests/ToDoList.Tests.csproj",
+      "projectPath": "/Users/Guest/Desktop/ToDoList-Databases/ToDoList.Tests/ToDoList.Tests.csproj",
       "packagesPath": "/Users/Guest/.nuget/packages/",
-      "outputPath": "/Users/Guest/Desktop/ToDoList-Database/ToDoList.Tests/obj/",
+      "outputPath": "/Users/Guest/Desktop/ToDoList-Databases/ToDoList.Tests/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -13536,8 +13536,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "/Users/Guest/Desktop/ToDoList-Database/ToDoList/ToDoList.csproj": {
-              "projectPath": "/Users/Guest/Desktop/ToDoList-Database/ToDoList/ToDoList.csproj"
+            "/Users/Guest/Desktop/ToDoList-Databases/ToDoList/ToDoList.csproj": {
+              "projectPath": "/Users/Guest/Desktop/ToDoList-Databases/ToDoList/ToDoList.csproj"
             }
           }
         }
@@ -13582,7 +13582,7 @@
           },
           "mysqlconnector": {
             "target": "Package",
-            "version": "[0.53.0, )"
+            "version": "[0.54.0, )"
           }
         },
         "imports": [

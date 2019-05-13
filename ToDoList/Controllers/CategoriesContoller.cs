@@ -30,29 +30,29 @@ namespace ToDoList.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpGet("/categories/{id}")]
-    public ActionResult Show(int id)
-    {
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      Category selectedCategory = Category.Find(id);
-      List<Item> categoryItems = selectedCategory.GetItems();
-      model.Add("category", selectedCategory);
-      model.Add("categoryItems", categoryItems);
-      return View(selectedCategory);
-    }
-
-    [HttpPost("/categories/{categoryId}/items")]
-    public ActionResult Create(int categoryId, string itemDescription)
-    {
-      Category foundCategory = Category.Find(categoryId);
-      Item newItem = new Item(itemDescription, categoryId);
-      newItem.Save();
-      foundCategory.GetItems();
-      // List<Item> categoryItems = foundCategory.GetItems();
-      // model.Add("items", categoryItems);
-      // model.Add("category", foundCategory);
-      return View("Show", foundCategory);
-    }
+    // [HttpGet("/categories/{id}")]
+    // public ActionResult Show(int id)
+    // {
+    //   Dictionary<string, object> model = new Dictionary<string, object>();
+    //   Category selectedCategory = Category.Find(id);
+    //   List<Item> categoryItems = selectedCategory.GetItems();
+    //   model.Add("category", selectedCategory);
+    //   model.Add("categoryItems", categoryItems);
+    //   return View(selectedCategory);
+    // }
+    // 
+    // [HttpPost("/categories/{categoryId}/items")]
+    // public ActionResult Create(int categoryId, string itemDescription)
+    // {
+    //   Category foundCategory = Category.Find(categoryId);
+    //   Item newItem = new Item(itemDescription, categoryId);
+    //   newItem.Save();
+    //   foundCategory.GetItems();
+    //   // List<Item> categoryItems = foundCategory.GetItems();
+    //   // model.Add("items", categoryItems);
+    //   // model.Add("category", foundCategory);
+    //   return View("Show", foundCategory);
+    // }
 
     [HttpPost("/categories/{categoryId}/delete")]
     public ActionResult Delete(int categoryId)
