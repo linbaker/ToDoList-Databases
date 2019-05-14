@@ -28,12 +28,12 @@ namespace ToDoList.Controllers
       List<Category> allCategories = Category.GetAll();
       return View("Index", allCategories);
     }
-    
-    [HttpGet("/categories/{id}")]
-    public ActionResult Show(int id)
+
+    [HttpGet("/categories/{categoryId}")]
+    public ActionResult Show(int categoryId)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Category selectedCategory = Category.Find(id);
+      Category selectedCategory = Category.Find(categoryId);
       List<Item> categoryItems = selectedCategory.GetItems();
       List<Item> allItems = Item.GetAll();
       model.Add("category", selectedCategory);
@@ -49,6 +49,30 @@ namespace ToDoList.Controllers
       Item item = Item.Find(itemId);
       category.AddItem(item);
       return RedirectToAction("Show",  new { id = categoryId });
+    }
+
+    [HttpPost("/categories/{categoryId}/delete")]
+    public ActionResult Delete(int categoryId)
+    {
+      Category category = Category.Find(categoryId);
+      category.DeleteCategory();
+      return Redirect("/");
+    }
+
+
+    [HttpGet("/categories/{categoryId}/edit")]
+    public ActionResult Edit(int categoryId)
+    {
+      Category category = Category.Find(categoryId);
+      return View(category);
+    }
+
+    [HttpPost("/categories/{categoryId}")]
+    public ActionResult Update(int categoryId, string newName)
+    {
+      Category category = Category.Find(categoryId);
+      category.Edit(newName);
+      return RedirectToAction("Show", categoryId);
     }
     // [HttpGet("/categories/{id}")]
     // public ActionResult Show(int id)

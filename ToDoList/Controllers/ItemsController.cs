@@ -72,11 +72,6 @@ namespace ToDoList.Controllers
     public ActionResult Edit(int itemId)
     {
       Item item = Item.Find(itemId);
-    // Dictionary<string, object> model = new Dictionary<string, object>();
-      // model.Add("category", category);
-      // model.Add("item", item);
-      // Item selectedItem = Item.Find(itemId);
-      // selectedItem.Edit(newDescription);
       return View(item);
     }
 

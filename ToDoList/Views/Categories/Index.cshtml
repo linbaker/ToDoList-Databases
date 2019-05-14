@@ -8,6 +8,10 @@
     @foreach (var category in Model)
     {
       <li><a href="/categories/@category.GetId()">@category.GetName()</a></li>
+      <a href='/categories/@category.GetId()/edit'>Edit</a>
+      <form action="/categories/@category.GetId()/delete" method="post">
+      <button type="submit" name="button"> Delete </button>
+      </form>
     }
   </ul>
 }
