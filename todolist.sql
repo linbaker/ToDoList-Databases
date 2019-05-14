@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `todolist_tests`
+-- Database: `todolist`
 --
-CREATE DATABASE IF NOT EXISTS `todolist_tests` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `todolist_tests`;
+CREATE DATABASE IF NOT EXISTS `todolist` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `todolist`;
 
 -- --------------------------------------------------------
 
@@ -38,10 +38,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`) VALUES
-(117, 'Home stuff'),
-(118, 'Home stuff'),
-(119, 'Work stuff'),
-(120, 'Home stuff');
+(2, 'jhklhjkl'),
+(3, 'home');
 
 -- --------------------------------------------------------
 
@@ -60,41 +58,9 @@ CREATE TABLE `categories_items` (
 --
 
 INSERT INTO `categories_items` (`id`, `category_id`, `item_id`) VALUES
-(1, 14, 19),
-(2, 16, 20),
-(3, 22, 29),
-(4, 24, 30),
-(6, 31, 32),
-(7, 31, 33),
-(8, 32, 34),
-(10, 34, 43),
-(11, 36, 44),
-(12, 42, 45),
-(13, 43, 46),
-(14, 43, 47),
-(15, 44, 48),
-(17, 46, 57),
-(18, 48, 58),
-(20, 55, 60),
-(21, 55, 61),
-(22, 56, 62),
-(24, 58, 71),
-(25, 60, 72),
-(27, 67, 74),
-(28, 67, 75),
-(29, 68, 76),
-(31, 70, 85),
-(32, 72, 86),
-(34, 79, 88),
-(35, 79, 89),
-(36, 80, 90),
-(38, 82, 99),
-(39, 84, 100),
-(41, 91, 2),
-(42, 91, 3),
-(43, 92, 4),
-(45, 94, 13),
-(46, 96, 14);
+(50, 2, 0),
+(52, 2, 12),
+(53, 0, 12);
 
 -- --------------------------------------------------------
 
@@ -106,6 +72,13 @@ CREATE TABLE `items` (
   `id` int(11) NOT NULL,
   `description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `items`
+--
+
+INSERT INTO `items` (`id`, `description`) VALUES
+(12, 'Item6');
 
 --
 -- Indexes for dumped tables
@@ -137,19 +110,19 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `categories_items`
 --
 ALTER TABLE `categories_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

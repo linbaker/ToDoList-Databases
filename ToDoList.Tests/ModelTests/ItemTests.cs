@@ -25,36 +25,36 @@ namespace ToDoList.Tests
       Item newItem = new Item("test");
       Assert.AreEqual(typeof(Item), newItem.GetType());
     }
-
-    [TestMethod]
-    public void GetDescription_ReturnsDescription_String()
-    {
-      //Arrange
-      string description = "Walk the dog.";
-      Item newItem = new Item(description);
-
-      //Act
-      string result = newItem.GetDescription();
-
-      //Assert
-      Assert.AreEqual(description, result);
-    }
-
-    [TestMethod]
-    public void SetDescription_SetDescription_String()
-    {
-      //Arrange
-      string description = "Walk the dog.";
-      Item newItem = new Item(description);
-
-      //Act
-      string updatedDescription = "Do the dishes";
-      newItem.SetDescription(updatedDescription);
-      string result = newItem.GetDescription();
-
-      //Assert
-      Assert.AreEqual(updatedDescription, result);
-    }
+    // 
+    // [TestMethod]
+    // public void GetDescription_ReturnsDescription_String()
+    // {
+    //   //Arrange
+    //   string description = "Walk the dog.";
+    //   Item newItem = new Item(description);
+    //
+    //   //Act
+    //   string result = newItem.Description;
+    //
+    //   //Assert
+    //   Assert.AreEqual(description, result);
+    // }
+    //
+    // [TestMethod]
+    // public void SetDescription_SetDescription_String()
+    // {
+    //   //Arrange
+    //   string description = "Walk the dog.";
+    //   Item newItem = new Item(description);
+    //
+    //   //Act
+    //   string updatedDescription = "Do the dishes";
+    //   newItem.SetDescription(updatedDescription);
+    //   string result = newItem.Description;
+    //
+    //   //Assert
+    //   Assert.AreEqual(updatedDescription, result);
+    // }
 
     [TestMethod]
     public void GetAll_ReturnsEmptyList_ItemList()
@@ -96,7 +96,7 @@ namespace ToDoList.Tests
       testItem.Save();
 
       //Act
-      Item foundItem = Item.Find(testItem.GetId());
+      Item foundItem = Item.Find(testItem.Id);
 
       //Assert
       Assert.AreEqual(testItem, foundItem);
@@ -138,8 +138,8 @@ namespace ToDoList.Tests
       testItem.Save();
       Item savedItem = Item.GetAll()[0];
 
-      int result = savedItem.GetId();
-      int testId = testItem.GetId();
+      int result = savedItem.Id;
+      int testId = testItem.Id;
 
       //Assert
       Assert.AreEqual(testId, result);
@@ -155,7 +155,7 @@ namespace ToDoList.Tests
 
       //Act
       testItem.Edit(secondDescription);
-      string result = Item.Find(testItem.GetId()).GetDescription();
+      string result = Item.Find(testItem.Id).Description;
 
       //Assert
       Assert.AreEqual(secondDescription, result);

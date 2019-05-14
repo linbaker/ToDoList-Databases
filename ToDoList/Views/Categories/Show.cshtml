@@ -1,7 +1,7 @@
 @using ToDoList.Models;
 
 <h1>To Do List</h1>
-<h2>Category: @Model["category"].GetName()</h2>
+<h2>Category: @Model["category"].Name</h2>
 <hr />
 
 @if (@Model["categoryItems"].Count != 0)
@@ -10,20 +10,20 @@
   <ul>
     @foreach (var item in @Model["categoryItems"])
     {
-      <li>@item.GetDescription()</li>
+      <li>@item.Description</li>
     }
   </ul>
 }
 
 <h4>Add an item to this category:</h4>
 
-<form action='/categories/@Model["category"].GetId()/items/new' method='post'>
+<form action='/categories/@Model["category"].Id/items/new' method='post'>
   <label for='itemId'>Select a item</label>
   <select id='itemId' name='itemId' type='text'>
 
     @foreach (var item in @Model["allItems"])
     {
-      <option value='@item.GetId()'>@item.GetDescription()</option>
+      <option value='@item.Id'>@item.Description</option>
     }
 
   </select>
