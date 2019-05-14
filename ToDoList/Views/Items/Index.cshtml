@@ -5,10 +5,13 @@
 @if (Model.Count != 0)
 {
   <ul>
-    @foreach (var item in Model)
-    {
-      <li><a href='/items/@item.GetId()'>@item.GetDescription()</a></li>
-    }
+  @foreach (var item in Model)
+  {
+    <li><a href='/items/@item.GetId()'>@item.GetDescription()</a></li>
+    <form action="/items/@item.GetId()/delete" method="post">
+    <button type="submit" name="button"> Delete </button>
+    </form>
+  }
   </ul>
 }
 

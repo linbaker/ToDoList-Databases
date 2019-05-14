@@ -60,25 +60,18 @@ namespace ToDoList.Controllers
     }
 
 
-    // [HttpPost("/items/delete")]
-    // public ActionResult DeleteAll()
-    // {
-    //   Item.ClearAll();
-    //   return View();
-    // }
-    //
-    // [HttpPost("/categories/{categoryId}/items/{itemId}/delete")]
-    // public ActionResult Delete(int categoryId, int itemId)
-    // {
-    //   Item item = Item.Find(itemId);
-    //   item.DeleteItem();
-    //   Dictionary<string, object> model = new Dictionary<string, object>();
-    //   Category category = Category.Find(categoryId);
-    //   model.Add("category", category);
-    //   model.Add("item", item);
-    //   return RedirectToAction("Show", "Categories");
-    // }
-    //
+    [HttpPost("/items/{itemId}/delete")]
+    public ActionResult Delete(int categoryId, int itemId)
+    {
+      Item item = Item.Find(itemId);
+      item.DeleteItem();
+      // Dictionary<string, object> model = new Dictionary<string, object>();
+      // Category category = Category.Find(categoryId);
+      // model.Add("category", category);
+      // model.Add("item", item);
+      return Redirect("/");
+    }
+
     // [HttpGet("/categories/{categoryId}/items/{itemId}/edit")]
     // public ActionResult Edit(int categoryId, int itemId)
     // {
