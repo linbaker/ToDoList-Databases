@@ -12103,11 +12103,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Guest/Desktop/ToDoList-Database/ToDoList/ToDoList.csproj",
+      "projectUniqueName": "/Users/Guest/Desktop/ToDoList-Databases/ToDoList/ToDoList.csproj",
       "projectName": "ToDoList",
-      "projectPath": "/Users/Guest/Desktop/ToDoList-Database/ToDoList/ToDoList.csproj",
+      "projectPath": "/Users/Guest/Desktop/ToDoList-Databases/ToDoList/ToDoList.csproj",
       "packagesPath": "/Users/Guest/.nuget/packages/",
-      "outputPath": "/Users/Guest/Desktop/ToDoList-Database/ToDoList/obj/",
+      "outputPath": "/Users/Guest/Desktop/ToDoList-Databases/ToDoList/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
