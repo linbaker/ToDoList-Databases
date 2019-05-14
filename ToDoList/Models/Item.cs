@@ -14,6 +14,26 @@ namespace ToDoList.Models
       _description = description;
       _id = id;
     }
+    
+    public string GetDescription()
+    {
+      return _description;
+    }
+
+    public void SetDescription(string newDescription)
+    {
+      _description = newDescription;
+    }
+
+    public int GetId()
+    {
+      return _id;
+    }
+
+    public void SetId(int newId)
+    {
+      _id = newId;
+    }
 
     public List<Category> GetCategories()
     {
@@ -65,25 +85,6 @@ namespace ToDoList.Models
       }
     }
 
-    public string GetDescription()
-    {
-      return _description;
-    }
-
-    public void SetDescription(string newDescription)
-    {
-      _description = newDescription;
-    }
-
-    public int GetId()
-    {
-      return _id;
-    }
-
-    public void SetId(int newId)
-    {
-      _id = newId;
-    }
 
     public static List<Item> GetAll()
     {

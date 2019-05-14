@@ -8,6 +8,7 @@
   @foreach (var item in Model)
   {
     <li><a href='/items/@item.GetId()'>@item.GetDescription()</a></li>
+    <a href='/items/@item.GetId()/edit'>Edit</a>
     <form action="/items/@item.GetId()/delete" method="post">
     <button type="submit" name="button"> Delete </button>
     </form>
