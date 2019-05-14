@@ -8,65 +8,84 @@ namespace ToDoList.Controllers
   public class ItemsController : Controller
   {
 
+    [HttpGet("/items")]
+    public ActionResult Index()
+    {
+      List<Item> allItems = Item.GetAll();
+      return View(allItems);
+    }
+
+
     [HttpGet("/categories/{categoryId}/items/new")]
     public ActionResult New(int categoryId)
     {
-       Category category = Category.Find(categoryId);
-       return View(category);
+      Category category = Category.Find(categoryId);
+      return View(category);
     }
 
-    [HttpGet("/categories/{categoryId}/items/{itemId}")]
-    public ActionResult Show(int categoryId, int itemId)
+    [HttpGet("/items/{id}")]
+    public ActionResult Show(int id)
     {
-      Item item = Item.Find(itemId);
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Category category = Category.Find(categoryId);
-      model.Add("item", item);
-      model.Add("category", category);
+      Item selectedItem = Item.Find(id);
+      List<Category> itemCategories = selectedItem.GetCategories();
+      List<Category> allCategories = Category.GetAll();
+      model.Add("selectedItem", selectedItem);
+      model.Add("itemCategories", itemCategories);
+      model.Add("allCategories", allCategories);
       return View(model);
     }
 
-    [HttpPost("/items/delete")]
-    public ActionResult DeleteAll()
-    {
-      Item.ClearAll();
-      return View();
-    }
-
-    [HttpPost("/categories/{categoryId}/items/{itemId}/delete")]
-    public ActionResult Delete(int categoryId, int itemId)
+    [HttpPost("/items/{itemId}/categories/new")]
+    public ActionResult AddCategory(int itemId, int categoryId)
     {
       Item item = Item.Find(itemId);
-      item.DeleteItem();
-      Dictionary<string, object> model = new Dictionary<string, object>();
       Category category = Category.Find(categoryId);
-      model.Add("category", category);
-      model.Add("item", item);
-      return RedirectToAction("Show", "Categories");
+      item.AddCategory(category);
+      return RedirectToAction("Show",  new { id = itemId });
     }
 
-    [HttpGet("/categories/{categoryId}/items/{itemId}/edit")]
-    public ActionResult Edit(int categoryId, int itemId)
-    {
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      Category category = Category.Find(categoryId);
-      model.Add("category", category);
-      Item item = Item.Find(itemId);
-      model.Add("item", item);
-      return View(model);
-    }
-
-    [HttpPost("/categories/{categoryId}/items/{itemId}")]
-    public ActionResult Update(int categoryId, int itemId, string newDescription)
-    {
-      Item item = Item.Find(itemId);
-      item.Edit(newDescription);
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      Category category = Category.Find(categoryId);
-      model.Add("category", category);
-      model.Add("item", item);
-      return View("Show", model);
-    }
+    // [HttpPost("/items/delete")]
+    // public ActionResult DeleteAll()
+    // {
+    //   Item.ClearAll();
+    //   return View();
+    // }
+    //
+    // [HttpPost("/categories/{categoryId}/items/{itemId}/delete")]
+    // public ActionResult Delete(int categoryId, int itemId)
+    // {
+    //   Item item = Item.Find(itemId);
+    //   item.DeleteItem();
+    //   Dictionary<string, object> model = new Dictionary<string, object>();
+    //   Category category = Category.Find(categoryId);
+    //   model.Add("category", category);
+    //   model.Add("item", item);
+    //   return RedirectToAction("Show", "Categories");
+    // }
+    //
+    // [HttpGet("/categories/{categoryId}/items/{itemId}/edit")]
+    // public ActionResult Edit(int categoryId, int itemId)
+    // {
+    //   Dictionary<string, object> model = new Dictionary<string, object>();
+    //   Category category = Category.Find(categoryId);
+    //   model.Add("category", category);
+    //   Item item = Item.Find(itemId);
+    //   model.Add("item", item);
+    //   return View(model);
+    // }
+    //
+    // [HttpPost("/categories/{categoryId}/items/{itemId}")]
+    // public ActionResult Update(int categoryId, int itemId, string newDescription)
+    // {
+    //   Item item = Item.Find(itemId);
+    //   item.Edit(newDescription);
+    //   Dictionary<string, object> model = new Dictionary<string, object>();
+    //   Category category = Category.Find(categoryId);
+    //   model.Add("category", category);
+    //   model.Add("item", item);
+    //   return View("Show", model);
+    // }
 
     // [HttpGet("/categories/{id}")]
     // public ActionResult Show(int id)

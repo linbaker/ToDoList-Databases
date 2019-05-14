@@ -10,13 +10,5 @@ namespace ToDoList.Controllers
     {
       return View();
     }
-
-    [Produces("text/html")]
-    [Route("/favorite_photos")]
-    public ActionResult FavoritePhotos()
-    {
-      return View();
-    }
-
   }
 }
